@@ -17,7 +17,7 @@ Replace myapp name with the name of your app (ex. hello-world)
 
 or click the button below
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM-Bluemix/rails-4.20-blog.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/dimoon/rails-bluemix-blog.git)
 
 
 
