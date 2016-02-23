@@ -1,7 +1,7 @@
-Simple blog app built on Ruby on Rails 4.2.0
+Simple blog app built on Ruby on Rails
 ================================================================================
 
-Simple blog app built on Ruby on Rails 4.2.0
+Simple blog app built on Ruby on Rails
 
 
 
