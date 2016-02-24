@@ -1,15 +1,23 @@
 ---
 declared-services:
-  postgres-rails:
-    label: elephantsql
-    plan: turtle
+  mongodb01:
+    label: Rails 5 blog MongoDB
+    plan: 100
+  ostorage01:
+    label: Rails 5 blog Object Storage
+    plan: Free
+  redis01:
+    label: Rails 5 blog Redis
+    plan: 30mb
 applications:
-- name: rails-hello-world
+- name: rails-5-blog
   memory: 256M
   instances: 1
   path: .
   stack: cflinuxfs2
   buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
-  command: bundle exec rake db:migrate && bundle exec rails s -p $PORT
+  command: bundle exec rake db:seed && bundle exec puma -e production -p $PORT
   services:
-    - postgres-rails
+    - mongodb01
+    - ostorage01
+    - redis01

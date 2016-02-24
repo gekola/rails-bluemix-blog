@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        ActionCable.server.broadcast('posts_notifications', @post.attributes.merge(html: render_to_string(@post)))
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else

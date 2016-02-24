@@ -1,6 +1,20 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+#require 'rails/all'
+%w(
+  action_controller/railtie
+  action_view/railtie
+  action_mailer/railtie
+  active_job/railtie
+  action_cable/engine
+  rails/test_unit/railtie
+  sprockets/railtie
+).each do |railtie|
+  begin
+    require "#{railtie}"
+  rescue LoadError
+  end
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,6 +35,7 @@ module Blog
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
+    # config.active_record.raise_in_transactional_callbacks = true
+    config.action_cable.allowed_request_origins = ['http://rails-5-blog.mybluemix.net', %r{http://localhost:.*}]
   end
 end
