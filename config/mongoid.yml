@@ -144,4 +144,4 @@ test:
 production:
   clients:
     default:
-      uri: <%= JSON.parse(ENV['VCAP_SERVICES']).dig('mongodb-2.4', 0, 'credentials', 'url') %>
+      uri: <%= JSON.parse(ENV['VCAP_SERVICES']).dig('mongodb-2.4', 0, 'credentials', 'url') if Rails.env.production? %>

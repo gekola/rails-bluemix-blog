@@ -12,7 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'redis'
+gem 'rmagick'
 gem 'carrierwave'
+gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'fog'
 gem 'fog-openstack', github: 'gekola/fog-openstack', branch: 'fix-bluemix'
 

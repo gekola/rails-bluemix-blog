@@ -1,6 +1,6 @@
 production:
   adapter: redis
-  url: <%= cred = JSON.parse(ENV['VCAP_SERVICES']).dig('rediscloud', 0, 'credentials'); "redis://rediscloud:#{cred['password']}@#{cred['hostname']}:#{cred['port']}" %>
+  url: <%= Rails.env.production? and (cred = JSON.parse(ENV['VCAP_SERVICES']).dig('rediscloud', 0, 'credentials'); "redis://rediscloud:#{cred['password']}@#{cred['hostname']}:#{cred['port']}") %>
 development: &development
   adapter: redis
   url: redis://localhost:6379

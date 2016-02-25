@@ -16,7 +16,7 @@ applications:
   path: .
   stack: cflinuxfs2
   buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
-  command: bundle exec rake db:seed && bundle exec puma -e production -p $PORT
+  command: bundle exec puma -e production -p $PORT
   services:
     - mongodb01
     - ostorage01

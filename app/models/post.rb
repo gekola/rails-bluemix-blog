@@ -3,4 +3,5 @@ class Post
 
   field :title
   field :body
+  mount_uploader :image, ImageUploader
 end
