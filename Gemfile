@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid', require: 'carrierwave/mongoid'
 gem 'fog'
 gem 'fog-openstack', github: 'gekola/fog-openstack', branch: 'fix-bluemix'
+gem 'pdfkit'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

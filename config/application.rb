@@ -37,5 +37,6 @@ module Blog
     # Do not swallow errors in after_commit/after_rollback callbacks.
     # config.active_record.raise_in_transactional_callbacks = true
     config.action_cable.allowed_request_origins = ['http://rails-5-blog.mybluemix.net', %r{http://localhost:.*}]
+    config.middleware.use PDFKit::Middleware, {print_media_type: true}, only: '/posts'
   end
 end

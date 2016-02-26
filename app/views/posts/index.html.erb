@@ -21,4 +21,7 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path -%>
+<span class="no-print">
+  | <%= link_to 'Export to pdf', posts_path(format: :pdf) %>
+</span>
